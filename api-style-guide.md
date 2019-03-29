@@ -303,7 +303,7 @@ The actual operation invoked MUST match the HTTP method semantics as defined in 
     * **Example:** To add a credit card on file, `POST https://api.foo.com/v1/vault/credit-cards`
     * Idempotency semantics: If this is a subsequent execution of the same invocation (including the [`Foo-Request-Id`](#http-custom-headers) header) and the resource was already created, then the request SHOULD be idempotent.
 * The **`POST`** method SHOULD be used to create a new sub-resource and establish its relationship with the main resource.
-    * **Example:** To refund a payment with transaction ID 12345: `POST https://api.foo.com/v1/payments/payments/12345/refund`
+    * **Example:** To refund a payment with transaction ID 12345: `POST https://api.foo.com/v1/payments/12345/refund`
 * The **`POST`** method MAY be used in complex operations, along with the name of the operation. This is also known as the [_controller pattern_](patterns.md#controller-resource) and is considered an exception to the RESTful model. It is more applicable in cases when resources represent a business process, and operations are the steps or actions to be performed as part of it. For more information, please refer to [section 2.6](http://techbus.safaribooksonline.com/9780596809140/chapter-identifying-resources) of the [RESTful Web Services Cookbook][29].
 * The **`PUT`** method SHOULD be used to update resource attributes or to establish a relationship from a resource to an existing sub-resource; it updates the main resource with a reference to the sub-resource.
 
